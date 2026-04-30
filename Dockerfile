@@ -1,7 +1,9 @@
-FROM mcr.microsoft.com/dotnet/aspnet:8.0
+FROM ubuntu:22.04
 
 WORKDIR /app
 
-COPY publish/ .
+COPY InventoryManagement .
 
-ENTRYPOINT ["dotnet", "InventoryManagement.dll"]
+RUN chmod +x InventoryManagement
+
+ENTRYPOINT ["./InventoryManagement"]
