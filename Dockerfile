@@ -1,7 +1,7 @@
-FROM mcr.microsoft.com/dotnet/aspnet:8.0-windowsservercore-ltsc2022
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
 
 WORKDIR /app
 
-COPY InventoryManagement.exe .
+COPY publish/ .
 
-ENTRYPOINT ["./InventoryManagement"]
+ENTRYPOINT ["dotnet", "InventoryManagement.dll"]
